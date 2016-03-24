@@ -1,0 +1,23 @@
+sudo apt-get install openvswitch-switch
+sudo apt-get install mininet
+sudo apt-get install python-pip
+sudo apt-get install python-dev
+sudo apt-get install qt5-default 
+sudo apt-get install libpcap-dev 
+sudo apt-get install python3-six 
+sudo apt-get upgrade python3-six 
+
+sudo pip install six --upgrade
+sudo pip install --upgrade pip
+sudo pip install ryu
+
+
+sudo mn --controller remote --topo tree,depth=3
+sudo ovs-vsctl set bridge s1 protocols=OpenFlow13
+ryu-manager --verbose /usr/local/lib/python3.4/dist-packages/ryu/app/simple_switch_13.py
+
+ryu-manager --observe-links --app-lists /usr/local/lib/python2.7/dist-packages/ryu/app/gui_topology/gui_topology.py /usr/local/lib/python2.7/dist-packages/ryu/app/simple_switch_13.py
+
+
+You can see the topology under 127.0.0.1:8080
+ryu-manager --observe-links --app-lists /usr/local/lib/python2.7/dist-packages/ryu/app/gui_topology/gui_topology.py
