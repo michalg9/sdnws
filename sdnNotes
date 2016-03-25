@@ -11,6 +11,7 @@ sudo pip install six --upgrade
 sudo pip install --upgrade pip
 sudo pip install ryu
 
+sudo killall ovs-controller 
 
 sudo mn --controller remote --topo tree,depth=3
 sudo ovs-vsctl set bridge s1 protocols=OpenFlow13
