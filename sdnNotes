@@ -27,3 +27,6 @@ ryu-manager --observe-links --app-lists /usr/local/lib/python2.7/dist-packages/r
 sudo tcpdump -i lo port 6633 and 'tcp[33]!=2' and 'tcp[33]!=3'
 
 
+sudo tcpdump -i lo port 6633 and 'tcp[33]!=2' and 'tcp[33]!=3' -l
+
+
